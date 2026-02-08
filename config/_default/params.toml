@@ -10,9 +10,10 @@ defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
 
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 enableImageLazyLoading = true
 enableImageWebp = true
+enableQuicklink = true
 
 # robots = ""
 fingerprintAlgorithm = "sha256"
@@ -36,29 +37,29 @@ fingerprintAlgorithm = "sha256"
 
 [article]
   showDate = true
-  showDateUpdated = true
+  showDateUpdated = false
   showAuthor = true
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = false
+  showEdit = true
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
-  showReadingTime = false
-  showTableOfContents = false
+  showReadingTime = true
+  showTableOfContents = true
   showTaxonomies = false
   showWordCount = false
   showComments = false
   # sharingLinks = ["facebook", "x-twitter", "mastodon", "pinterest", "reddit", "linkedin", "email", "telegram", "line", "weibo"]
 
 [list]
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showSummary = false
-  showTableOfContents = false
-  showTaxonomies = true
-  groupByYear = true
+  showTableOfContents = true
+  showTaxonomies = false
+  groupByYear = false
   paginationWidth = 1
 
 [sitemap]

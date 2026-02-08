@@ -6,10 +6,11 @@ baseURL = "https://from-env.com"
 defaultContentLanguage = "zh-Hans"
 
 enableRobotsTXT = true
-paginate = 10
+pagination.pagerSize = 10
 summaryLength = 0
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-enableGitInfo = true
+[git]
+  info = true
