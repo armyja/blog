@@ -1,2 +1,19 @@
+# Astro
+node_modules/
+dist/
+.astro/
+.dev/
+
+# Hugo (legacy)
 public/
 .hugo_build.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
