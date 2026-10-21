@@ -33,10 +33,10 @@ const { Content } = await render(entry)
   <Pagination
     showLeft={Boolean(prev)}
     leftTitle={`${t('prev_post')}: ${prev?.data.title}`}
-    leftUrl={prev ? `/posts/${prev.id}` : undefined}
+    leftUrl={prev ? `/posts/${prev.id}/` : undefined}
     showRight={Boolean(next)}
     rightTitle={`${t('next_post')}: ${next?.data.title}`}
-    rightUrl={next ? `/posts/${next.id}` : undefined}
+    rightUrl={next ? `/posts/${next.id}/` : undefined}
     showPageCount={false}
   />
 
