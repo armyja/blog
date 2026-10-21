@@ -1,11 +1,10 @@
 ---
 title: 洞洞谱制作器
-published: 2024-05-10T00:04:41+08:00
+pubDate: '2024-05-10T00:04:41+08:00'
+tags:
+- whistle
 draft: false
-author: "Armyja"    
-tags: ["whistle"]
-summary: ''
-showComments: true
+author: Armyja
 ---
 <!DOCTYPE html>
 <html>

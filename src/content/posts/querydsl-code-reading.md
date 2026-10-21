@@ -1,13 +1,11 @@
 ---
-title: "QueryDSL源码阅读"
-published: 2024-04-04T22:32:00+08:00
+title: QueryDSL源码阅读
+pubDate: '2024-04-04T22:32:00+08:00'
+tags:
+- QueryDSL
 draft: false
-author: "Armyja"
-tags: ["QueryDSL"]
-categories: ["Code Reading"]
-showTableOfContents: true
-showComments: true
-description: "QueryDSL是一个强大的框架,它使Java开发人员能够以类型安全的方式构建SQL查询。"
+description: QueryDSL是一个强大的框架,它使Java开发人员能够以类型安全的方式构建SQL查询。
+author: Armyja
 ---
 ## 导语
 

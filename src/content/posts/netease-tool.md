@@ -1,15 +1,14 @@
 ---
 title: 网易云音乐工具[安卓]
-published: 2024-10-26T10:10:00+08:00
-draft: false
-showComments: true
-author: Armyja
+pubDate: '2024-10-26T10:10:00+08:00'
 tags:
-  - tool
-  - 网易云音乐
-  - ncm
-  - 音乐标签
+- tool
+- 网易云音乐
+- ncm
+- 音乐标签
+draft: false
 description: 网易云音乐工具
+author: Armyja
 ---
 <meting-js id="2610226440" type="song" server="netease" fixed="false" mini="false" autoplay="false" theme="#255579"></meting-js>
 

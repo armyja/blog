@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import LayoutPost from 'astro-theme-retyped/layouts/LayoutPost.astro'
+import { getPostDescription, getTagUrl, getTags } from 'astro-theme-retyped/utils'
+import { t } from 'astro-theme-retyped/i18n-util.ts'
+
+export const getStaticPaths = (async () => {
+  const tags = await getTags()
+  return Array.from(tags).map(([tag, posts]) => ({
+    params: { tag },
+    props: { tag, posts },
+  }))
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { tag, posts } = Astro.props
+---
+
+<LayoutDefault>
+  <section>
+    <h2 class="post-title">
+      <a href={getTagUrl(tag)}># {tag}</a>
+      <span class="text-3.5 font-normal">{t('tag_count', posts.length)}</span>
+    </h2>
+    <div class="flex flex-col gap-7.5">
+      {
+        posts.map(post => (
+          <LayoutPost post={post}>
+            <p class="line-clamp-4">{getPostDescription(post)}</p>
+          </LayoutPost>
+        ))
+      }
+    </div>
+  </section>
+</LayoutDefault>

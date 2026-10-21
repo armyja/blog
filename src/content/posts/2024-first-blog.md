@@ -1,10 +1,10 @@
 ---
-title: "2024 第一篇博客"
-published: 2024-03-31T23:17:00+08:00
+title: 2024 第一篇博客
+pubDate: '2024-03-31T23:17:00+08:00'
+tags:
+- diary
 draft: false
-author: "Armyja"
-tags: ["diary"]
-description: ""
+author: Armyja
 ---
 ## 加油
 

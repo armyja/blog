@@ -1,10 +1,10 @@
 ---
-title: "Cody介绍"
-published: 2024-04-04T21:12:00+08:00
-draft: false
-author: "Armyja"
+title: Cody介绍
+pubDate: '2024-04-04T21:12:00+08:00'
 tags: []
-description: "Cody 是一个 AI 编码助手，负责编写、修复和维护您的代码。它使用 AI 和对代码库的深刻理解来收集上下文，帮助您更快地编写和理解代码。"
+draft: false
+description: Cody 是一个 AI 编码助手，负责编写、修复和维护您的代码。它使用 AI 和对代码库的深刻理解来收集上下文，帮助您更快地编写和理解代码。
+author: Armyja
 ---
 [Cody](https://sourcegraph.com/docs/cody) 是一个 AI 编码助手，负责编写、修复和维护您的代码。它使用 AI 和对代码库的深刻理解来收集上下文，帮助您更快地编写和理解代码。  
 

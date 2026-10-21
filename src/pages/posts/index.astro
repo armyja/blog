@@ -1,0 +1,19 @@
+---
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import LayoutPost from 'astro-theme-retyped/layouts/LayoutPost.astro'
+import { getPostDescription, getPosts } from 'astro-theme-retyped/utils'
+
+const posts = await getPosts()
+---
+
+<LayoutDefault>
+  <section class="flex flex-col gap-7.5">
+    {
+      posts.map(post => (
+        <LayoutPost post={post}>
+          <p class="line-clamp-4">{getPostDescription(post)}</p>
+        </LayoutPost>
+      ))
+    }
+  </section>
+</LayoutDefault>
