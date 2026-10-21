@@ -39,7 +39,8 @@ const config: UserConfig = {
       reactionsEnabled: '1',
       emitMetadata: '0',
       inputPosition: 'top',
-      theme: 'light',
+      // 跟随站点明暗模式：组件会用 postMessage 同步 iframe 主题
+      theme: 'preferred_color_scheme',
       lang: 'zh-CN',
       loading: 'lazy',
     },
