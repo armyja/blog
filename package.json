@@ -24,7 +24,7 @@
     "@unocss/transformer-variant-group": "^66.3.3",
     "astro": "^5.13.5",
     "astro-seo": "^0.8.4",
-    "astro-theme-retyped": "https://github.com/armyja/astro-theme-retyped/archive/refs/tags/v0.1.2.tar.gz",
+    "astro-theme-retyped": "https://github.com/armyja/astro-theme-retyped/archive/refs/tags/v0.1.3.tar.gz",
     "dayjs": "^1.11.13",
     "giscus": "^1.6.0",
     "markdown-it": "^14.1.0",
