@@ -1,0 +1,27 @@
+---
+import { getEntry, render } from 'astro:content'
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import { formatDate } from 'astro-theme-retyped/utils'
+
+const aboutPost = await getEntry('spec', 'about')
+if (!aboutPost) {
+  throw new Error('缺少 src/content/spec/about.md')
+}
+const { Content } = await render(aboutPost)
+---
+
+<LayoutDefault>
+  <header class="flex flex-col gap-2">
+    <h1 class="post-title"><a class="not-prose">{aboutPost.data.title}</a></h1>
+    {
+      aboutPost.data.pubDate && (
+        <div class="text-3.5">
+          <time>{formatDate(aboutPost.data.pubDate)}</time>
+        </div>
+      )
+    }
+  </header>
+  <article class="prose">
+    <Content />
+  </article>
+</LayoutDefault>

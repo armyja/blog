@@ -1,0 +1,45 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import { themeConfig } from 'astro-theme-retyped/config.ts'
+import { t } from 'astro-theme-retyped/i18n-util.ts'
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import LayoutPost from 'astro-theme-retyped/layouts/LayoutPost.astro'
+import Pagination from 'astro-theme-retyped/components/Pagination.astro'
+import { getPostDescription, getPosts } from 'astro-theme-retyped/utils'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getPosts()
+  posts.sort((a, b) => {
+    if (a.data.pin && !b.data.pin) return -1
+    if (!a.data.pin && b.data.pin) return 1
+    return 0
+  })
+  return paginate(posts, { pageSize: themeConfig.site.pageSize })
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { page } = Astro.props
+---
+
+<LayoutDefault>
+  <section class="flex flex-col gap-7.5">
+    {
+      page.data.map(post => (
+        <LayoutPost post={post}>
+          <p class="line-clamp-4">{getPostDescription(post)}</p>
+        </LayoutPost>
+      ))
+    }
+  </section>
+  <Pagination
+    showLeft={Boolean(page.url.prev)}
+    leftTitle={t('prev')}
+    leftUrl={page.url.prev}
+    showRight={Boolean(page.url.next)}
+    rightTitle={t('next')}
+    rightUrl={page.url.next}
+    currentPage={page.currentPage}
+    totalPage={page.lastPage}
+  />
+</LayoutDefault>

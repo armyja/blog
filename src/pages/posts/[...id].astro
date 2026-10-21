@@ -1,0 +1,74 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
+import { render } from 'astro:content'
+import Comments from 'astro-theme-retyped/components/Comments.astro'
+import Pagination from 'astro-theme-retyped/components/Pagination.astro'
+import SiteSeo from 'astro-theme-retyped/components/SiteSeo.astro'
+import { t } from 'astro-theme-retyped/i18n-util.ts'
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import LayoutPost from 'astro-theme-retyped/layouts/LayoutPost.astro'
+import { getPosts } from 'astro-theme-retyped/utils'
+
+export const getStaticPaths = (async () => {
+  const posts = await getPosts()
+  return posts.map((post, idx) => ({
+    params: { id: post.id },
+    props: { entry: post, next: posts[idx + 1], prev: posts[idx - 1] },
+  }))
+}) satisfies GetStaticPaths
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>
+
+const { entry, prev, next } = Astro.props
+const { Content } = await render(entry)
+---
+
+<LayoutDefault>
+  <SiteSeo slot="seo" title={entry.data.title} desc={entry.data.description} banner={entry.data.banner} />
+
+  <LayoutPost post={entry}>
+    <Content />
+  </LayoutPost>
+
+  <Pagination
+    showLeft={Boolean(prev)}
+    leftTitle={`${t('prev_post')}: ${prev?.data.title}`}
+    leftUrl={prev ? `/posts/${prev.id}` : undefined}
+    showRight={Boolean(next)}
+    rightTitle={`${t('next_post')}: ${next?.data.title}`}
+    rightUrl={next ? `/posts/${next.id}` : undefined}
+    showPageCount={false}
+  />
+
+  <Comments post={entry} />
+</LayoutDefault>
+
+<script>
+  import '@github/clipboard-copy-element'
+
+  document.addEventListener('clipboard-copy', (event) => {
+    const target = event.target as HTMLElement
+    const icon = target.querySelector('.icon') as HTMLElement
+    icon.classList.replace('i-mdi-content-copy', 'i-mdi-check')
+    setTimeout(() => {
+      icon.classList.replace('i-mdi-check', 'i-mdi-content-copy')
+    }, 1500)
+  })
+
+  const codeBlocks = Array.from(document.querySelectorAll('pre'))
+  const icon = "<div class='i-mdi-content-copy icon w-4 h-4'></div>"
+  for (const codeBlock of codeBlocks) {
+    const wrapper = document.createElement('div')
+    wrapper.className = 'code-container'
+
+    const copyButton = document.createElement('clipboard-copy')
+    const code = codeBlock.querySelector('code')
+    copyButton.value = code?.textContent ?? ''
+    copyButton.className = 'clipboard-copy'
+    copyButton.innerHTML = icon
+
+    codeBlock.appendChild(copyButton)
+    codeBlock.parentNode?.insertBefore(wrapper, codeBlock)
+    wrapper.appendChild(codeBlock)
+  }
+</script>

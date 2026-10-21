@@ -1,18 +1,30 @@
 ---
-import Layout from '~/layouts/Layout.astro'
-import { getSortedPosts } from '~/utils'
-import TagsSection from '~/components/TagsSection.astro'
-import BlockHeader from '~/components/BlockHeader.astro'
+import LayoutDefault from 'astro-theme-retyped/layouts/LayoutDefault.astro'
+import { getTagUrl, getTags } from 'astro-theme-retyped/utils'
+import { t } from 'astro-theme-retyped/i18n-util.ts'
 
-const sortedPosts = await getSortedPosts()
-const postsHaveTags = sortedPosts.some(
-  (post) => post.data.tags && post.data.tags.length > 0,
-)
+const tags = await getTags()
+const list = Array.from(tags).map(([name, posts]) => ({
+  name,
+  href: getTagUrl(name),
+  size: t('tag_count', posts.length),
+}))
 ---
 
-<Layout title="标签 - 如若不燃">
+<LayoutDefault>
   <section>
-    <BlockHeader>标签</BlockHeader>
-    {postsHaveTags && <TagsSection posts={sortedPosts} />}
+    <h2 class="post-title">{t('Tags')}</h2>
+    <ul class="pl-6 list-none flex flex-col gap-4">
+      {
+        list.map(({ name, href, size }) => (
+          <li>
+            <h3 class="post-title">
+              <a href={href}># {name}</a>
+            </h3>
+            <p>{size}</p>
+          </li>
+        ))
+      }
+    </ul>
   </section>
-</Layout>
+</LayoutDefault>

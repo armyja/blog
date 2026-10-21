@@ -1,10 +1,11 @@
 ---
 title: Undertale 传说之下
-slug: undertale
-published: 2017-01-18T15:16:22.000Z
-author: "Armyja"
-tags: ["game"]
-summary: 第一次了解 Undertale，是在网易云音乐听到其 OST「Stronger Than You」。这是一款打破常规的另类 RPG，且乐评率在 Steam 排名第一，是 2015 Steam 最佳游戏之一。好奇心促使我对它一探究竟。
+pubDate: '2017-01-18T15:16:22+00:00'
+tags:
+- game
+draft: false
+description: 第一次了解 Undertale，是在网易云音乐听到其 OST「Stronger Than You」。这是一款打破常规的另类 RPG，且乐评率在 Steam 排名第一，是 2015 Steam 最佳游戏之一。好奇心促使我对它一探究竟。
+author: Armyja
 ---
 
 第一次了解 Undertale，是在网易云音乐听到其 OST「Stronger Than You」。这是一款打破常规的另类 RPG，且乐评率在 Steam 排名第一，是 2015 Steam 最佳游戏之一。好奇心促使我对它一探究竟。

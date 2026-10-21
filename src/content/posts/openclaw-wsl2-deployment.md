@@ -1,19 +1,18 @@
 ---
 title: Windows WSL2 部署 OpenClaw 全攻略
-published: 2026-02-08T21:40:00+08:00
-draft: false
-showComments: true
-author: Armyja
+pubDate: '2026-02-08T21:40:00+08:00'
 tags:
-  - OpenClaw
-  - WSL2
-  - AI Assistant
-  - Telegram
-  - OpenClaw
-  - WSL2
-  - Telegram Bot
-  - AI 助手
+- OpenClaw
+- WSL2
+- AI Assistant
+- Telegram
+- OpenClaw
+- WSL2
+- Telegram Bot
+- AI 助手
+draft: false
 description: 详细介绍如何在 Windows WSL2 环境下部署和配置 OpenClaw AI 助手，并集成 Telegram 频道。
+author: Armyja
 ---
 
 ## 引言

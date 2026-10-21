@@ -1,10 +1,11 @@
 ---
 title: GAMES104 笔记
-published: 2022-05-30T07:23:59.944Z
-author: "Armyja"
-tags: ['game']
-showComments: true
-summary: "本课程将介绍现代游戏引擎所涉及的系统架构，技术点，引擎系统相关的知识。 通过该课程，你能够对游戏引擎建立起一个全面且完整的了解。 如果你动手能力足够强，你将能够跟随课程，从0到1搭建起一个完整的迷你游戏引擎。如本课程适合相关专业领域的学生、研究者，以及所有对游戏引擎设计和开发感兴趣的人。"
+pubDate: '2022-05-30T07:23:59.944000+00:00'
+tags:
+- game
+draft: false
+description: 本课程将介绍现代游戏引擎所涉及的系统架构，技术点，引擎系统相关的知识。 通过该课程，你能够对游戏引擎建立起一个全面且完整的了解。 如果你动手能力足够强，你将能够跟随课程，从0到1搭建起一个完整的迷你游戏引擎。如本课程适合相关专业领域的学生、研究者，以及所有对游戏引擎设计和开发感兴趣的人。
+author: Armyja
 ---
 
 <meting-js id="33367012" type="song" server="netease" fixed="false" mini="false" autoplay="false" theme="#255579"></meting-js>

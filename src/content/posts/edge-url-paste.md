@@ -1,10 +1,11 @@
 ---
 title: Edge 浏览器复制粘贴 URL 显示网站标题
-published: 2022-04-27T15:04:41.501Z
-author: "Armyja"
-tags: ["JavaScript"]
-summary: 与预料的不同，当把 Edge 浏览器地址栏中的 https://collection.armyja.cn/v/front-end/ 粘贴到 Notion 时，显示的是超链接 【前端笔记 - Collection (armyja.cn)】。这是为什么呢？
-neteaseSongId: 1922188998
+pubDate: '2022-04-27T15:04:41.501000+00:00'
+tags:
+- JavaScript
+draft: false
+description: 与预料的不同，当把 Edge 浏览器地址栏中的 https://collection.armyja.cn/v/front-end/ 粘贴到 Notion 时，显示的是超链接 【前端笔记 - Collection (armyja.cn)】。这是为什么呢？
+author: Armyja
 ---
 
 <meting-js id="1922188998" type="song" server="netease" fixed="false" mini="false" autoplay="false" theme="#255579"></meting-js>
