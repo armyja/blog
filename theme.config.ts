@@ -10,8 +10,8 @@ const config: UserConfig = {
     pageSize: 8,
     navLinks: [
       { name: '首页', href: '/' },
-      { name: '博文', href: '/posts' },
-      { name: '标签', href: '/tags' },
+      { name: '博文', href: '/posts/' },
+      { name: '标签', href: '/tags/' },
       { name: 'Memos', href: 'https://memos.armyja-online.uk/u/armyja', external: true },
     ],
     socialLinks: [
